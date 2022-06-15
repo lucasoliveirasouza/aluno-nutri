@@ -32,18 +32,26 @@ class _AlunoInicioViewState extends State<AlunoInicioView> {
         child: ListView(
           children: [
             ListTile(
-              leading: CircleAvatar(
-                radius: 25,
-                child: Icon(Icons.account_circle_rounded),
-              ),
-              title: Text("Lucas Oliveira de Souza"),
-              subtitle: Container(
-                child: Text(
-                  "9° ano - A",
-                  style: TextStyle(),
+                leading: CircleAvatar(
+                  radius: 25,
+                  child: Icon(Icons.account_circle_rounded),
                 ),
-              ),
-            ),
+                title: Text("Lucas Oliveira de Souza"),
+                subtitle: Container(
+                  margin: EdgeInsets.only(right: 190, top: 5),
+                  padding: EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade200,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    '9° ano - A',
+                    style: TextStyle(
+                      color: Colors.indigo,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )),
             SizedBox(
               height: 5,
             ),
