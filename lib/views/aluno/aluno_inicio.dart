@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AlunoInicioView extends StatefulWidget {
-  const AlunoInicioView({Key? key}) : super(key: key);
+  AlunoInicioView({Key? key}) : super(key: key);
 
   @override
   State<AlunoInicioView> createState() => _AlunoInicioViewState();
@@ -12,8 +12,12 @@ class _AlunoInicioViewState extends State<AlunoInicioView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.white24,
         shadowColor: Colors.transparent,
+        leading: Icon(
+          Icons.arrow_back_ios,
+          color: Colors.grey.shade700,
+        ),
         title: Text(
           "Nutre",
           style: TextStyle(
@@ -24,14 +28,37 @@ class _AlunoInicioViewState extends State<AlunoInicioView> {
         centerTitle: true,
       ),
       body: Container(
-        color: Colors.white,
-        padding: EdgeInsets.only(right: 15, left: 15, top: 15),
+        padding: EdgeInsets.only(right: 15, left: 15, top: 5),
         child: ListView(
           children: [
             ListTile(
-              leading: Icon(Icons.account_circle_rounded),
+              leading: CircleAvatar(
+                radius: 25,
+                child: Icon(Icons.account_circle_rounded),
+              ),
               title: Text("Lucas Oliveira de Souza"),
-              subtitle: Text("9° ano - A"),
+              subtitle: Container(
+                child: Text(
+                  "9° ano - A",
+                  style: TextStyle(),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Saldo atual"),
+                subtitle: Text("Crédito disponível"),
+                trailing: Text(
+                  "R\$ 54,00",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             )
           ],
         ),
